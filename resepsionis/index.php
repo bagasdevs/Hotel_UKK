@@ -1,13 +1,30 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["username"])) {
+	header('Location:../login.php');
+	exit;
+}
+
+$level=$_SESSION["tipe"];
+
+if ($level!='resepsionis') {
+    header('Location:../login.php');
+    exit;
+}
+
+$id_user=$_SESSION["id"];
+$username=$_SESSION["username"];
+
+?>
+
+<?php
  include "../includes/koneksi.php";
  include "../components/header.php";
+ include('../components/navbar.php');
+ include('../components/sidebar_res.php');
+ include('../components/content.php');
  ?>
-
-<?php 
-  include('../components/navbar.php');
-  include('../components/sidebar_res.php');
-  include('../components/content.php');
-  ?>
 
 <body>
   <div class="container" id="data_reservasi">

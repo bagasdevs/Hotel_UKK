@@ -24,7 +24,7 @@
                     </ul>
             </ul>
             <div class="mt-4 mb-2 p-3 hide-sidebar-mini">
-                <a href="#" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                <a href="../logout.php" class="btn btn-primary btn-lg btn-block btn-icon-split">
                     <i class="fas fa-power-off"></i> Log Out
                 </a>
             </div>

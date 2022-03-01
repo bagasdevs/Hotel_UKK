@@ -1,4 +1,23 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["username"])) {
+	header('Location:../login.php');
+	exit;
+}
+
+$level=$_SESSION["tipe"];
+
+if ($level!='admin') {
+    header('Location:../login.php');
+    exit;
+}
+
+$id_user=$_SESSION["id"];
+$username=$_SESSION["username"];
+
+?>
+<?php
  include "../includes/koneksi.php";
  include "../components/header.php";
  ?>

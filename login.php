@@ -1,7 +1,49 @@
 <?php
-include('includes/koneksi.php');
-?>
+		 //Fungsi untuk mencegah inputan karakter yang tidak sesuai
+		 function input($data) {
+			 $data = trim($data);
+			 $data = stripslashes($data);
+			 $data = htmlspecialchars($data);
+			 return $data;
+			}
+			//Cek apakah ada kiriman form dari method post
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+				
+				session_start();
+				
+			include('includes/koneksi.php');
+			$username = input($_POST["username"]);
+			$p = input(md5($_POST["password"]));
 
+			$sql = "select * from user where username='".$username."' and password='".$p."' limit 1";
+			$hasil = mysqli_query ($conn,$sql);
+			$jumlah = mysqli_num_rows($hasil);
+
+			if ($jumlah>0) {
+				$row = mysqli_fetch_assoc($hasil);
+				$_SESSION["id"]=$row["id"];
+				$_SESSION["username"]=$row["username"];
+				$_SESSION["tipe"]=$row["tipe"];
+		
+		
+				if ($_SESSION["tipe"]=$row["tipe"]=='admin')
+				{
+					header("Location:admin/index.php");
+				} else if ($_SESSION["tipe"]=$row["tipe"]=='resepsionis')
+				{
+					header("Location:resepsionis/index.php");
+				}
+		
+				
+			}else {
+				echo "<div class='alert alert-danger'>
+				<strong>Error!</strong> Username dan password salah. 
+			  </div>";
+			}
+
+		}
+	
+	?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +91,8 @@ include('includes/koneksi.php');
 							</div>
 
 							<div class="card-body">
-								<form method="POST" action="aksi.php" class="needs-validation" novalidate="">
+								<form method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>" class="needs-validation"
+									novalidate="">
 									<div class="form-group">
 										<label for="username">Username</label>
 										<input id="username" type="text" class="form-control" name="username"

@@ -18,7 +18,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-title">Settings</div>
-                        <a href="#" class="dropdown-item has-icon text-danger">
+                        <a href="../logout.php" class="dropdown-item has-icon text-danger">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
                     </div>
