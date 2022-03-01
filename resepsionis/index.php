@@ -20,6 +20,15 @@ $username=$_SESSION["username"];
 
 <?php
  include "../includes/koneksi.php";
+   $data_kamar = mysqli_query($conn,"SELECT * FROM tb_kamar");
+   $data_user = mysqli_query($conn,"SELECT * FROM user");
+   $data_fumum = mysqli_query($conn,"SELECT * FROM tb_fasilitas_umum");
+   $data_pelanggan = mysqli_query($conn,"SELECT * FROM tb_pelanggan");
+
+   $jumlah_kamar = mysqli_num_rows($data_kamar);
+   $jumlah_user = mysqli_num_rows($data_user);
+   $jumlah_fumum = mysqli_num_rows($data_fumum);
+   $jumlah_pelanggan = mysqli_num_rows($data_pelanggan);
  include "../components/header.php";
  include('../components/navbar.php');
  include('../components/sidebar_res.php');

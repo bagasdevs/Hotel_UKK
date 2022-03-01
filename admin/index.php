@@ -12,15 +12,23 @@ if ($level!='admin') {
     header('Location:../login.php');
     exit;
 }
-
-$id_user=$_SESSION["id"];
-$username=$_SESSION["username"];
+ $id_user=$_SESSION["id"];
+ $username=$_SESSION["username"];
 
 ?>
 <?php
  include "../includes/koneksi.php";
- include "../components/header.php";
- ?>
+  $data_kamar = mysqli_query($conn,"SELECT * FROM tb_kamar");
+  $data_user = mysqli_query($conn,"SELECT * FROM user");
+  $data_fumum = mysqli_query($conn,"SELECT * FROM tb_fasilitas_umum");
+  $data_pelanggan = mysqli_query($conn,"SELECT * FROM tb_pelanggan");
+
+  $jumlah_kamar = mysqli_num_rows($data_kamar);
+  $jumlah_user = mysqli_num_rows($data_user);
+  $jumlah_fumum = mysqli_num_rows($data_fumum);
+  $jumlah_pelanggan = mysqli_num_rows($data_pelanggan);
+  include "../components/header.php";
+?>
 
 <body>
 
@@ -46,29 +54,24 @@ $username=$_SESSION["username"];
   <script type="text/javascript">
     $(document).ready(function () {
 
-      /*tombol tambah(+) fasilitas*/
       $("#add_fasilitas").click(function () {
         $("#modal_tambah_fasilitas").modal('show');
       });
 
-      /*tombol tambah(+) fasilitas umum*/
       $("#add_fasilitas_umum").click(function () {
         $("#modal_tambah_fasilitas_umum").modal('show');
       });
 
-      /*Saat klik tombol Menu Kamar*/
       $("#tombol_kamar").click(function () {
         $('#data').html('');
         load_kamar();
       });
 
-      /*Saat klik tombol Menu Fasilitas kamar*/
       $("#tombol_fasilitas").click(function () {
         $('#data').html('');
         load_fasilitas_kamar();
       });
 
-      /*Saat klik tombol Menu Fasilitas Umum*/
       $("#tombol_fasilitas_umum").click(function () {
         $('#data').html('');
         load_fasilitas_umum();

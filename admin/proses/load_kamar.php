@@ -99,13 +99,14 @@
           <!-- Modal body -->
           <div class="modal-body">
             <form id="form_e">
+              <input type="hidden" class="form-control" id="idk" name="idk">
               <div class="mb-3 mt-3 form-floating">
-                <label for="nama_kamar">Nama Kamar</label>
-                <input type="text" class="form-control" id="nama_kamar" name="nama_kamar">
+                <label for="nproses">Nama Kamar</label>
+                <input type="text" class="form-control" id="nproses" name="nproses" value="">
               </div>
               <div class="mb-3 mt-3 form-floating">
-                <label for="jml_kamar">Jumlah Kamar</label>
-                <input type="number" class="form-control" id="jml_kamar" name="jml_kamar">
+                <label for="jproses">Jumlah Kamar</label>
+                <input type="number" class="form-control" id="jproses" name="jproses" value="">
               </div>
             </form>
 
@@ -149,6 +150,7 @@
       function edit_modal_kamar() {
         $("#modal_edit_kamar").modal('toggle');
       }
+
 
       function show_modal_kamar(id) {
         $("#lihat_data_kamar").modal('toggle');
@@ -197,29 +199,28 @@
 
       });
 
-      $(function () {
-        $("#edit_kamar").on('click', function () {
-          var nama = $("#nama_kamar").val();
-          var jkamar = $("#jml_kamar").val();
+      $("#edit_kamar").click(function () {
+        var npro = $("#nproses").val();
+        var jpro = $("#jproses").val();
+        var edit = $("#edit_kamar").val();
 
-          $.ajax({
-            url: "proses/ubah_kamar.php",
-            method: "POST",
-            data: {
-              nama: nama,
-              jkamar: jkamar
-            },
-            success: function (data) {
-              if (data == "OK") {
-                alert("BERHASIL DIUBAH!");
-                window.location.href = "index.php?id=kamar";
-              }
-              if (data == "ERROR") {
-                alert("GAGAL DIUBAH!")
-              }
+        $.ajax({
+          url: "proses/ubah_kamar.php",
+          method: "POST",
+          data: {
+            npro: nproses,
+            jpro: jproses,
+            ubah: edit
+          },
+          success: function (data) {
+            if (data == "OK") {
+              alert("BERHASIL DIUBAH!");
+              window.location.href = "index.php";
             }
-
-          });
+            if (data == "ERROR") {
+              alert("GAGAL DIUBAH!")
+            }
+          }
         });
 
       });

@@ -14,7 +14,7 @@
                                    <h4>Total User</h4>
                                </div>
                                <div class="card-body">
-                                   0
+                                   <?php echo $jumlah_user; ?>
                                </div>
                            </div>
                        </div>
@@ -29,7 +29,7 @@
                                    <h4>Fasilitas</h4>
                                </div>
                                <div class="card-body">
-                                   0
+                                   <?php echo $jumlah_fumum; ?>
                                </div>
                            </div>
                        </div>
@@ -44,7 +44,7 @@
                                    <h4>Kamar</h4>
                                </div>
                                <div class="card-body">
-                                   3
+                                   <?php echo $jumlah_kamar; ?>
                                </div>
                            </div>
                        </div>
@@ -59,7 +59,7 @@
                                    <h4>Laporan</h4>
                                </div>
                                <div class="card-body">
-                                   0
+                                   <?php echo $jumlah_pelanggan; ?>
                                </div>
                            </div>
                        </div>

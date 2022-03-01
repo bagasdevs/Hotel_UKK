@@ -1,11 +1,11 @@
 <?php
- //print_r($_POST);
- include "../../includes/koneksi.php";
-$id = $_POST['ids'];
- $nama = $_POST['nama'];
- $jkamar = $_POST['jkamar'];
+ 
+include "../../includes/koneksi.php";
+$id = $_POST['ubah'];
+$nproses = $_POST['npro'];
+$jproses = $_POST['jpro'];
 
-     $sql = "UPDATE tb_kamar SET nama_kamar ='$nama', jumlah_kamar='$jkamar' WHERE (id_kamar= '$id')";
+     $sql = "UPDATE tb_kamar SET nama_kamar ='$nproses', jumlah_kamar='$jproses' WHERE (id_kamar='$id')";
      if (($conn->query($sql)==1)) {
           $data = "OK";
           echo $data;
