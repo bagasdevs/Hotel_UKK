@@ -43,7 +43,7 @@
                         } else if ($row["status"]==""){$status="Batal"; $warna="badge bg-danger";}
             ?>
            <tr>
-             <td><span class="<?php echo $warna; ?>"><?php echo $status;  ?></span></td>
+             <td><span class="text-white <?php echo $warna; ?>"><?php echo $status;  ?></span></td>
              <td><?php echo $row["nama_tamu"]; ?></td>
              <td><?php echo $row["tgl_pesan"]; ?></td>
              <td><?php echo $row["checkin"]; ?></td>

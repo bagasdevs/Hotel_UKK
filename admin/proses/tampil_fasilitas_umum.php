@@ -10,18 +10,17 @@
           $ket= $row["keterangan"];
 
 ?>
- <table class="table table-striped" style="width:100%">
+<table class="table table-striped" style="width:100%">
 
   <tbody>
-     <tr>
-       <td>Nama Kamar </td>
-       <td>: <?php echo $nf; ?> </td>
-     </tr>
-     <tr>
-       <td>Total Kamar </td>
-       <td>: <?php echo $ket; ?> </td>
-     </tr>
+    <tr>
+      <td>Nama Fasilitas </td>
+      <td>: <?php echo $nf; ?> </td>
+    </tr>
+    <tr>
+      <td>Keterangan </td>
+      <td>: <?php echo $ket; ?> </td>
+    </tr>
   </tbody>
 
- </table>
-
+</table>

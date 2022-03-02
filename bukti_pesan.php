@@ -52,10 +52,10 @@
                             <div class="col company-details">
                                 <h2 class="name">
                                     <a target="_blank" href="">
-                                        Hotel Merdeka
+                                        Hotel Hebat
                                     </a>
                                 </h2>
-                                <div>Magelang, AZ 85004, INA</div>
+                                <div>Magelang, MGL 56153, ID</div>
                                 <div>(123) 456-789</div>
                                 <div>hotelhebat@gmail.com</div>
                             </div>
@@ -113,12 +113,10 @@
                         Bukti pemesanan kamar Hotel Merdeka - NTT - Indonesia.
                     </footer>
                 </div>
-                <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
                 <div></div>
             </div>
         </div>
 
-        <!-- PANGGIL FILE JAVASCRIPT DARI FOLDER js -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap5.0.1.bundle.min.js"></script>
 

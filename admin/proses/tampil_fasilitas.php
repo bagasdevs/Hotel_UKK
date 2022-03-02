@@ -9,18 +9,18 @@
           $namakamar= $row["nama_kamar"];
           $fasilitas= $row["fasilitas"];
 ?>
- <table class="table table-striped" style="width:100%">
+
+<table class="table table-striped" style="width:100%">
 
   <tbody>
-     <tr>
-       <td>Nama Kamar </td>
-       <td>: <?php echo $namakamar; ?> </td>
-     </tr>
-     <tr>
-       <td>Fasilitas </td>
-       <td>: <?php echo $fasilitas; ?> </td>
-     </tr>
+    <tr>
+      <td>Tipe Kamar </td>
+      <td>: <?php echo $namakamar; ?> </td>
+    </tr>
+    <tr>
+      <td>Fasilitas </td>
+      <td>: <?php echo $fasilitas; ?> </td>
+    </tr>
   </tbody>
 
- </table>
-
+</table>

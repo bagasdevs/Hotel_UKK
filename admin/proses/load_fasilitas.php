@@ -23,6 +23,7 @@
                   <th>ID Fasilitas</th>
                   <th>Tipe Kamar</th>
                   <th class="text-center">Nama Fasilitas</th>
+                  <th class="text-center">Foto</th>
                   <th class="text-center">Aksi</th>
                 </tr>
               </thead>
@@ -40,12 +41,14 @@
                   <td><?php echo $no++ ?></td>
                   <td><?php echo $row["nama_kamar"]; ?></td>
                   <td class="text-center"><?php echo $row["fasilitas"]; ?></td>
-                  <td class="text-center">
+                  <td><img src="../<?php echo $row["gambar"]; ?>" class="d-block" style="width: 80px; height: 40px">
+                  </td>
+                  <td class=" text-center">
                     <a href="#" data-id="" class="btn btn-info" onClick="show_modal_fasilitas_kamar(this.id)"
                       id="<?php echo $row["id"]; ?>"><i class="fas fa-eye"></i> Lihat</a>
-                    <a href="#" data-id="" class="btn btn-primary" onClick="check_modal_fasilitas_kamar(this.id)"
+                    <a href="proses/edit_fasilitas.php?id=<?php echo $row['id']; ?>" data-id="" class="btn btn-primary"
                       id="<?php echo $row["id"]; ?>"><i class="fas fa-pencil-alt"></i> Edit</a>
-                    <a href="#" data-id="" class="btn btn-danger" onClick="delete_modal_fasilitas_kamar(this.id)"
+                    <a href="proses/hapus_fasilitas.php?id=<?php echo $row['id']; ?>" data-id="" class="btn btn-danger"
                       id="<?php echo $row["id"]; ?>"><i class="fas fa-trash"></i> Hapus</a>
                   </td>
                 </tr>
@@ -63,7 +66,6 @@
 
   </div>
 
-  <!------------------------------ Script Awal Modal Tambah Fasilitas ------------------------------ -->
   <div class="modal fade" id="modal_tambah_fasilitas">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -76,10 +78,10 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-          <form id="form_fu">
+          <form id="form_fu" action="POST" enctype="multipart/form-data">
             <div class="mb-3 mt-3 form-floating">
-              <label for="idkamar">Tipe Kamar</label>
-              <select class="form-control select2 " id="idkamar" name="idkamar">
+              <label for="id">Tipe Kamar</label>
+              <select class="form-control select2 " id="id" name="id">
                 <?php
                     $sql = "SELECT * FROM tb_kamar";
                     $result = $conn->query($sql);

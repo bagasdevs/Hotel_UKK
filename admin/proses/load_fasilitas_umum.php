@@ -22,6 +22,7 @@
                 <th>ID Fasilitas</th>
                 <th>Nama Fasilitas</th>
                 <th class="text-center">Keterangan</th>
+                <th class="text-center">Foto</th>
                 <th class="text-center" style="width: 300px;">Aksi</th>
               </tr>
             </thead>
@@ -39,13 +40,17 @@
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $row["nama_fasilitas"]; ?></td>
                 <td class="text-center"><?php echo $row["keterangan"]; ?></td>
+                <td style="text-align: center;"><img src="../<?php echo $row["gambar"]; ?>" class="d-block"
+                    style="width: 80px; height: 40px">
+                </td>
                 <td class="text-center">
                   <a href="#" data-id="" class="btn btn-info" onClick="show_modal_fasilitas_umum(this.id)"
                     id="<?php echo $row["id"]; ?>"><i class="fas fa-eye"></i> Lihat</a>
-                  <a href="#" data-id="" class="btn btn-primary" onClick="check_modal_fasilitas_umum(this.id)"
+                  <a href="proses/edit_fasilitas_umum.php?id=<?php echo $row['id']; ?>" data-id=""
+                    class="btn btn-primary" onClick="check_modal_fasilitas_umum(this.id)"
                     id="<?php echo $row["id"]; ?>"><i class="fas fa-pencil-alt"></i> Edit</a>
-                  <a href="#" data-id="" class="btn btn-danger" onClick="delete_modal_fasilitas_umum(this.id)"
-                    id="<?php echo $row["id"]; ?>"><i class="fas fa-trash"></i> Hapus</a>
+                  <a href="proses/hapus_fasilitas_umum.php?id=<?php echo $row['id']; ?>" data-id=""
+                    class="btn btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                 </td>
               </tr>
               <?php
@@ -62,7 +67,6 @@
 
 </div>
 
-<!------------------------------ Script Awal Modal Tambah Fasilitas Umum ------------------------------ -->
 <div class="modal fade" id="modal_tambah_fasilitas_umum">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -75,7 +79,7 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <form id="form_fk">
+        <form id="form_fk" action="POST" enctype="multipart/form-data">
           <div class="mb-3 mt-3 form-floating">
             <label for="nama_fasilitas_umum">Nama Fasilitas</label>
             <input type="text" class="form-control" id="nama_fasilitas_umum" name="nama_fasilitas_umum">
@@ -86,7 +90,7 @@
           </div>
           <div class="mb-3 mt-3">
             <label for="upload_fasilitas">Pilih Gambar:</label>
-            <input type="file" class="form-control" id="upload_fasilitas">
+            <input type="file" class="form-control" id="upload_fasilitas" name="upload_fasilitas" value="Upload">
           </div>
         </form>
 
@@ -109,7 +113,7 @@
       <!-- Modal Header -->
       <div class="modal-header">
         <h4 class="modal-title">Deskripsi Fasilitas Umum</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"></button>
       </div>
 
       <!-- Modal body -->
@@ -156,10 +160,9 @@
         method: "POST",
         data: {
           nama: nama,
-          ket: ket
+          ket: ket,
         },
         success: function (data) {
-          //alert(data);return;
           if (data == "OK") {
             alert("Data Tersimpan!")
             window.location.href = "index.php?id=fasilitas_umum";

@@ -6,16 +6,31 @@
 <html lang="en">
 
 <head>
-  <title>WELCOME - HOTEL HEBAT</title>
+  <title>Selamat Datang - Hotel Hebat</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="hotel.png" />
   <link href="css/bootstrap5.0.1.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+
+  <link rel="stylesheet" href="assets/css/components.css">
+  <!-- Start GA -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-94034622-3');
+  </script>
 </head>
 
-<body>
-
-
+<body class="layout-3">
   <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Hotel Hebat</a>
@@ -63,7 +78,7 @@
                 $ket = $row["keterangan"];
         ?>
       <div class="carousel-item <?php echo $aktif;?> ">
-        <img src="<?php echo $gambar; ?>" alt="Los Angeles" class="d-block" style="width:100%">
+        <img src="<?php echo $gambar; ?>" class="d-block" style="width: 1400px; height: 500px">
         <div class="carousel-caption">
           <h3><?php echo $nf; ?></h3>
           <p><?php echo $ket; ?></p>
@@ -85,33 +100,32 @@
 
     </div>
   </div>
-
-
   <div class="container mt-2">
     <div class="d-flex justify-content-center">
       <div class="row">
         <div class="col-sm form-floating mb-3 mt-4">
-          <button type="button" id="tombol_pesan" class="btn btn-outline-primary">Mulai Pesan Sekarang</button>
+          <button type="button" id="tombol_pesan" class="btn btn-primary">Mulai Pesan Sekarang</button>
         </div>
       </div>
     </div>
   </div>
+
 
   <div class="container mt-2" id="panel_cek">
     <div class="d-flex justify-content-center">
       <form>
         <div class="row">
           <div class="col-sm form-floating mb-3 mt-3">
+            <!-- <label for="masuk"> Check In</label> -->
             <input type="date" class="form-control" id="masuk" name="masuk">
-            <label for="masuk"> Check In</label>
           </div>
           <div class="col-sm form-floating mb-3 mt-3">
+            <!-- <label for="keluar"> Check Out</label> -->
             <input type="date" class="form-control" id="keluar" name="keluar">
-            <label for="keluar"> Check Out</label>
           </div>
           <div class="col-sm form-floating mb-3 mt-3">
+            <!-- <label for="jkamar">Jumlah Kamar</label> -->
             <input type="number" class="form-control" id="jkamar" name="jkamar">
-            <label for="jkamar">Jumlah Kamar</label>
           </div>
         </div>
       </form>
@@ -172,84 +186,91 @@
 
   <div class="container mt-2" id="panel_fasilitas_kami">
     <h2 class="text-center">FASILITAS KAMI</h2>
-    <h5 class="text-center">Hotel Merdeka</h5>
     <div class="container mt-4">
       <div class="card">
         <h5>Kolam Renang</h5>
-        <p>The .img-fluid class makes the image scale nicely to the parent element (resize the browser window to see the
-          effect):</p>
-        <img class="img-fluid" max-width: 100%; height: auto; src="image/satu.jpg" alt="Gambar">
+        <p>Kami menyediakan kolam renang untuk para tamu dan para pemesan hotel agar bisa berolahraga walaupun di dalam
+          ruangan hotel</p>
+        <img style="width: 1200px; height: 400px;" class="img-fluid" src="image/kolamrenang.jpg" alt="Gambar">
       </div>
     </div>
     <div class="container mt-4">
       <div class="card">
-        <h4>Kantin Umum</h4>
-        <p>The .img-fluid class makes the image scale nicely to the parent element (resize the browser window to see the
-          effect):</p>
-        <img class="img-fluid" max-width: 100%; height: auto; src="image/dua.jpg" alt="Gambar">
+        <h4>Badminton</h4>
+        <p>Kami juga menyediakan tempat badminton untuk bermain para pemesan hotel dan tamu untuk memberikan kualitas
+          tempat</p>
+        <img style="width: 1200px; height: 400px;" class="img-fluid" src="image/badminton.jpg" alt="Gambar">
       </div>
     </div>
   </div>
 
-  <div class="container mt-2 col-sm-7" id="panel_kamar">
+  <div class="container mt-2 col-sm-8" id="panel_kamar">
     <h2 class="text-center">TIPE KAMAR KAMI</h2>
-    <h5 class="text-center">Hotel Merdeka</h5>
-
-    <div class="justify-content-center">
-      <div class="card mt-2 mb-4">
-        <div class="">
-          <h5 class="card-title">Tipe Superior:</h5>
-          <ul>
-            <li>Kamar berukuran luas 32 m2</li>
-            <li>Kamar mandi Shower</li>
-            <li>AC</li>
-            <li>LED</li>
-          </ul>
-          <img class="img-fluid" src="image/tiga.jpg" alt="Card image">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="image/kamar1.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Superior</h5>
+            <p class="card-text">Harga Rp 500.000.
+            </p>
+            <a href="index.php" class="btn btn-primary">Pesan Sekarang</a>
+          </div>
         </div>
       </div>
-      <div class="card mt-2 mb-4">
-        <div class="">
-          <h5 class="card-title">Tipe Delux:</h5>
-          <ul>
-            <li>Kamar berukuran luas 32 m2</li>
-            <li>Kamar mandi Shower</li>
-            <li>AC</li>
-            <li>LED</li>
-          </ul>
-          <img class="img-fluid" src="image/dua.jpg" alt="Card image">
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="image/kamar2.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Premium</h5>
+            <p class="card-text">Harga Rp 700.000.
+            </p>
+            <a href="index.php" class="btn btn-primary">Pesan Sekarang</a>
+          </div>
         </div>
       </div>
-
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="image/kamar3.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Deluxe</h5>
+            <p class="card-text">Harga Rp 900.000.
+            </p>
+            <a href="index.php" class="btn btn-primary">Pesan Sekarang</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="container mt-2" id="panel_tentang_kami">
-    <div class="d-flex justify-content-center">
-      <div class="row">
+  <div class="jumbotron">
+    <div class="container mt-2" id="panel_tentang_kami">
+      <div class="d-flex justify-content-center">
         <div class="col-sm-12 p-5">
           <h2 class="text-center">TENTANG KAMI</h2>
-          <p> <b>Hotel MERDEKA</b> terkenal dengan keramahan kelas dunia, desain hotel yang mengagumkan dan standar
-            layanan yang tak tertandingi di Bali dan Jakarta, AYANA adalah resort bintang lima yang pertama di Pantai
-            Waecicu, Pulau Flores, hanya dengan satu jam penerbangan dari Pulau Bali yang sangat indah.
-            AYANA Komodo Resort, Waecicu Beach memiliki 13 suites dan 192 kamar tamu yang premium. Terinspirasi dengan
-            cahaya, kenyamanan dan ruang terbuka, setiap kamar yang kontemporer menawarkan pemandangan laut yang menawan
-            dengan jendela besar untuk menikmati cahaya keemasan dari matahari yang terbenam di belakang Pulau Kukusan.
-
+          <p> <b>Hotel Hebat</b> terkenal dengan keramahan kelas dunia, desain hotel yang mengagumkan dan standar
+            layanan yang tak tertandingi di Magelang, Hotel Hebat adalah resort bintang lima yang pertama di Magelang
+            Hotel Hebat memiliki 3 Tipe Kamar dan 50 lebih kamar tamu yang premium. Terinspirasi dengan
+            cahaya, kenyamanan dan ruang terbuka, setiap kamar yang kontemporer menawarkan pemandangan laut yang
+            menawan
+            dengan jendela besar untuk menikmati cahaya keemasan dari matahari yang terbenam di belakang Pulau
+            Kukusan.
             Berlokasi di salah satu pulau berbukit dan indah dari kepulauan Indonesia, terdapat beragam agama, bahasa
-            dan pemandangan yang luar biasa yang berpadu dengan laut berwarna biru kristal dan pantai dengan pasir putih
+            dan pemandangan yang luar biasa yang berpadu dengan laut berwarna biru kristal dan pantai dengan pasir
+            putih
             yang asli.
           </p>
         </div>
       </div>
-
     </div>
   </div>
 
-  <div class="mt-5 p-2 bg-secondary text-white text-center">
-    <p>@Bagas by UKK RPL 2022</p>
+  <div class="mt-5 p-2 bg-primary text-white text-center">
+    <p>Bagas Cahya Pamungkas (UKK RPL 2022 Version 1.0)</p>
   </div>
-
+  <?php 
+  include "components/script.php";
+  ?>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap5.0.1.bundle.min.js"></script>
   <script src="crud_js/pesan.js"></script>

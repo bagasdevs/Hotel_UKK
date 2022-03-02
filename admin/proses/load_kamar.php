@@ -37,9 +37,9 @@
                 <td class="text-center">
                   <a href="#" data-id="" class="btn btn-info" onClick="show_modal_kamar(this.id)"
                     id="<?php echo $row["id_kamar"]; ?>"><i class="fas fa-eye"></i> Lihat</a>
-                  <a href="#" data-id="" class="btn btn-primary" onClick="edit_modal_kamar(this.id)"
+                  <a href="proses/edit_kamar.php?id=<?php echo $row['id_kamar']; ?>" data-id="" class="btn btn-primary"
                     id="<?php echo $row["id_kamar"]; ?>"><i class="fas fa-pencil-alt"></i> Edit</a>
-                  <a href="#" data-id="" class="btn btn-danger" onClick="delete_modal_kamar(this.id)"
+                  <a href="proses/hapus_kamar.php?id=<?php echo $row['id_kamar']; ?>" class="btn btn-danger"
                     id="<?php echo $row["id_kamar"]; ?>"><i class="fas fa-trash"></i> Hapus</a>
                 </td>
               </tr>
