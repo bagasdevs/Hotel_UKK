@@ -123,7 +123,7 @@
             <input type="date" class="form-control" id="keluar" name="keluar">
           </div>
           <div class="col-sm form-group mb-3 mt-3">
-            <label for="jkamar">Jumlah Kamar</label>
+            <label for="jkamar"> Jumlah Kamar</label>
             <input type="number" class="form-control" id="jkamar" name="jkamar">
           </div>
         </div>
