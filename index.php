@@ -115,16 +115,16 @@
     <div class="d-flex justify-content-center">
       <form>
         <div class="row">
-          <div class="col-sm form-floating mb-3 mt-3">
-            <!-- <label for="masuk"> Check In</label> -->
+          <div class="col-sm form-group mb-3 mt-3">
+            <label for="masuk"> Check In</label>
             <input type="date" class="form-control" id="masuk" name="masuk">
           </div>
-          <div class="col-sm form-floating mb-3 mt-3">
-            <!-- <label for="keluar"> Check Out</label> -->
+          <div class="col-sm form-group mb-3 mt-3">
+            <label for="keluar"> Check Out</label>
             <input type="date" class="form-control" id="keluar" name="keluar">
           </div>
-          <div class="col-sm form-floating mb-3 mt-3">
-            <!-- <label for="jkamar">Jumlah Kamar</label> -->
+          <div class="col-sm form-group mb-3 mt-3">
+            <label for="jkamar">Jumlah Kamar</label>
             <input type="number" class="form-control" id="jkamar" name="jkamar">
           </div>
         </div>

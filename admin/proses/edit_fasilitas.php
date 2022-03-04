@@ -65,8 +65,7 @@ if ($level!='admin') {
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Nama Fasilitas</label>
-                                <input type="text" class="form-control" id="fasilitas" name="fasilitas"
-                                    value="<?php echo $row["fasilitas"]; ?>">
+                                <input type="text" class="form-control" id="fasilitas" name="fasilitas" value="">
                             </div>
                         </div>
                         <div class="card-body">
